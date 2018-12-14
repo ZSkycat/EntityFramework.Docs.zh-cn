@@ -2,15 +2,15 @@
 layout: HubPage
 title: Entity Framework
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: 6bb12583-c39a-454c-8d83-d2a2793ca9ef
 uid: index
-ms.openlocfilehash: b548e3073e539207fc57ce41faca1fa19d11d1ed
-ms.sourcegitcommit: 01a75cd483c1943ddd6f82af971f07abde20912e
+ms.openlocfilehash: 2846545bdd7f29ba620592dacd288e3feb9ce6c4
+ms.sourcegitcommit: 064b09431f05848830e145a6cd65cad58881557c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52552563"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -225,7 +225,7 @@ ms.lasthandoff: 10/27/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https://docs.microsoft.com/dotnet/api/?view=efcore-2.0">⤤ API 参考</a>
+                                                    <a href="https://docs.microsoft.com/dotnet/api/?view=efcore-2.1">⤤ API 参考</a>
                                                 </h3>
                                                 <p>
                                                     <a href="https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a>
@@ -234,7 +234,7 @@ ms.lasthandoff: 10/27/2017
                                                     <a href="https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet&lt;TEntity&gt;</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/dotnet/api/?view=efcore-2.0"></a>更多...
+                                                    <a href="https://docs.microsoft.com/dotnet/api/?view=efcore-2.1"></a>更多...
                                                 </p>
                                             </div>
                                         </div>
@@ -257,7 +257,7 @@ ms.lasthandoff: 10/27/2017
                                 </div>
                             </li>
                             <li>
-                                <a href="/ef/ef6/index">
+                                <a href="/ef/ef6/get-started">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -267,7 +267,7 @@ ms.lasthandoff: 10/27/2017
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>⤤ 开始操作</h3>
+                                                    <h3>开始操作</h3>
                                                     <p>了解如何使用 Entity Framework 6 访问数据。</p>
                                                 </div>
                                             </div>
@@ -276,7 +276,7 @@ ms.lasthandoff: 10/27/2017
                                 </a>
                             </li>
                             <li>
-                                <a href="https://msdn.microsoft.com/library/dn223258(v=vs.113).aspx">
+                                <a href="https://docs.microsoft.com/dotnet/api/?view=entity-framework-6.2.0">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">

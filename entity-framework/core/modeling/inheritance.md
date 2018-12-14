@@ -1,41 +1,40 @@
 ---
-title: "继承的 EF 核心"
+title: 继承的 EF Core
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: 754be334-dd21-450e-9d22-2591e80012a2
-ms.technology: entity-framework-core
 uid: core/modeling/inheritance
-ms.openlocfilehash: f0394bc55dfbfea8277b1ddf898361165dd1fe51
-ms.sourcegitcommit: 01a75cd483c1943ddd6f82af971f07abde20912e
+ms.openlocfilehash: c5fa9d13dec8cfc3e1cac69e471f509cbbb9e4c5
+ms.sourcegitcommit: dadee5905ada9ecdbae28363a682950383ce3e10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42995891"
 ---
 # <a name="inheritance"></a>继承
 
-EF 模型中的继承用于控制如何在数据库中表示的实体类中的继承。
+EF 模型中的继承用于控制如何在数据库中表示实体类中的继承。
 
 ## <a name="conventions"></a>约定
 
-按照约定，由数据库提供程序，以确定继承在数据库中的表示方式。 请参阅[继承 （关系数据库）](relational/inheritance.md)这是如何处理与关系数据库提供程序。
+按照约定，负责数据库提供程序，以确定如何继承将表示在数据库中。 请参阅[继承 （关系数据库）](relational/inheritance.md)这与关系数据库提供程序的处理方式。
 
-如果模型中显式包含两个或多个继承的类型，EF 将仅设置继承。 EF 将不会扫描基表或派生类型，否则不包括在模型中。 你可以在模型中包含类型，通过公开*DbSet<TEntity>* 继承层次结构中的每个类型。
+如果两个或多个继承的类型显式包含在模型中，EF 将仅设置继承。 EF 不会扫描的基类或派生类型，否则不包含在模型中。 可以在模型中包含类型，通过公开*DbSet<TEntity>* 继承层次结构中每个类型。
 
 [!code-csharp[Main](../../../samples/core/Modeling/Conventions/Samples/InheritanceDbSets.cs?highlight=3-4&name=Model)]
 
-如果你不想要公开*DbSet<TEntity>* 对于层次结构中的一个或多个实体，你可以使用 Fluent API 以确保它们包括在模型中。
-如果您不依赖于约定可以指定使用显式的基类型和`HasBaseType`。
+如果不想要公开*DbSet<TEntity>* 对于层次结构中的一个或多个实体，你可以使用 Fluent API 以确保它们都包含在模型中。
+如果您不依赖于约定可以指定使用显式的基类型`HasBaseType`。
 
 [!code-csharp[Main](../../../samples/core/Modeling/Conventions/Samples/InheritanceModelBuilder.cs?highlight=7&name=Context)]
 
 > [!NOTE]
-> 你可以使用`.HasBaseType((Type)null)`以层次结构中删除的实体类型。
+> 可以使用`.HasBaseType((Type)null)`从层次结构中删除某个实体类型。
 
 ## <a name="data-annotations"></a>数据注释
 
-数据注释不能用于配置继承。
+不能使用数据注释来配置继承。
 
 ## <a name="fluent-api"></a>Fluent API
 
-用于继承的 Fluent API 取决于你使用的数据库提供程序。 请参阅[继承 （关系数据库）](relational/inheritance.md)您可以对关系数据库提供程序执行的配置。
+用于继承的 Fluent API 取决于正在使用的数据库提供程序。 请参阅[继承 （关系数据库）](relational/inheritance.md)可以针对关系数据库提供程序执行的配置。

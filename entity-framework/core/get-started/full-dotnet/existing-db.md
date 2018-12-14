@@ -1,42 +1,29 @@
 ---
-title: ".NET Framework 入门 - 现有数据库 - EF Core"
+title: .NET Framework 入门 - 现有数据库 - EF Core
 author: rowanmiller
-ms.author: divega
-ms.date: 10/27/2016
+ms.date: 08/06/2018
 ms.assetid: a29a3d97-b2d8-4d33-9475-40ac67b3b2c6
-ms.technology: entity-framework-core
 uid: core/get-started/full-dotnet/existing-db
-ms.openlocfilehash: 3cd69109e3cf8dbc103f9eea6e2553df17f29a98
-ms.sourcegitcommit: 5e2d97e731f975cf3405ff3deab2a3c75ad1b969
+ms.openlocfilehash: 1b90c491a3b2025da750a3266ff45d9d92bb1d0d
+ms.sourcegitcommit: b3c2b34d5f006ee3b41d6668f16fe7dcad1b4317
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51688610"
 ---
 # <a name="getting-started-with-ef-core-on-net-framework-with-an-existing-database"></a>通过现有数据库在 .NET Framework 上开始使用 EF Core
 
-在本演练中，你将构建一个控制台应用程序，该程序使用 Entity Framework 对 Microsoft SQL Server 数据库执行基本数据访问。 你将使用反向工程基于现有数据库创建 Entity Framework 模型。
+在本教程中，你将构建一个控制台应用程序，它使用 Entity Framework 对 Microsoft SQL Server 数据库执行基本数据访问。 通过对现有数据库进行反向工程，创建 Entity Framework 模型。
 
-> [!TIP]  
-> 可在 GitHub 上查看此文章的[示例](https://github.com/aspnet/EntityFramework.Docs/tree/master/samples/core/GetStarted/FullNet/ConsoleApp.ExistingDb)。
+[在 GitHub 上查看此文章的示例](https://github.com/aspnet/EntityFramework.Docs/tree/master/samples/core/GetStarted/FullNet/ConsoleApp.ExistingDb)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
-完成本演练需要以下先决条件：
+* [Visual Studio 2017 版本 15.7 或更高版本](https://www.visualstudio.com/downloads/)
 
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/)
+## <a name="create-blogging-database"></a>创建博客数据库
 
-* [最新版本的 NuGet 包管理器](https://dist.nuget.org/index.html)
-
-* [最新版本的 Windows PowerShell](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell)
-
-* [博客数据库](#blogging-database)
-
-### <a name="blogging-database"></a>博客数据库
-
-本教程使用 LocalDb 实例上的博客数据库作为现有数据库。
-
-> [!TIP]  
-> 如果你已在其他教程中创建了博客数据库，则可以跳过这些步骤。
+本教程使用 LocalDb 实例上的博客数据库作为现有数据库。 如果已在其他教程中创建了博客数据库，请跳过这些步骤。
 
 * 打开 Visual Studio
 
@@ -52,7 +39,7 @@ ms.lasthandoff: 11/15/2017
 
 * 右键单击“服务器资源管理器”中的数据库，然后选择“新建查询”
 
-* 将下面列出的脚本复制到查询编辑器中
+* 将下列脚本复制到查询编辑器中
 
 * 右键单击查询编辑器，然后选择“执行”
 
@@ -60,31 +47,31 @@ ms.lasthandoff: 11/15/2017
 
 ## <a name="create-a-new-project"></a>创建新项目
 
-* 打开 Visual Studio
+* 打开 Visual Studio 2017
 
 * “文件”>“新建”>“项目...”
 
-* 从左侧菜单中选择“模板”>“Visual C#”>“Windows”
+* 从左侧菜单中选择“已安装”>“Visual C#”->“Windows Desktop”
 
-* 选择“控制台应用程序”项目模板
+* 选择“控制台应用(.NET Framework)”项目模板
 
-* 确保面向 .NET Framework 4.5.1 或更高版本
+* 确保项目面向 **.NET Framework 4.6.1** 或更高版本
 
-* 为项目提供名称，然后单击“确定”
+* 将项目命名为 ConsoleApp.ExistingDb，并单击“确定”
 
 ## <a name="install-entity-framework"></a>安装 Entity Framework
 
-要使用 EF Core，请为要作为目标对象的数据库提供程序安装程序包。 本演练使用 SQL Server。 有关可用提供程序的列表，请参阅[数据库提供程序](../../providers/index.md)。
+要使用 EF Core，请为要作为目标对象的数据库提供程序安装程序包。 本教程使用 SQL Server。 有关可用提供程序的列表，请参阅[数据库提供程序](../../providers/index.md)。
 
 * “工具”>“NuGet 包管理器”>“包管理器控制台”
 
 * 运行 `Install-Package Microsoft.EntityFrameworkCore.SqlServer`
 
-若要从现有数据库启用反向工程，我们还需要安装几个其他程序包。
+下一步，要使用一些 Entity Framework Tools 对该数据库进行反向工程。 因此，请同时安装该工具包。
 
 * 运行 `Install-Package Microsoft.EntityFrameworkCore.Tools`
 
-## <a name="reverse-engineer-your-model"></a>对模型实施反向工程
+## <a name="reverse-engineer-the-model"></a>对模型实施反向工程
 
 现在是时候基于现有数据库创建 EF 模型了。
 
@@ -92,110 +79,47 @@ ms.lasthandoff: 11/15/2017
 
 * 运行以下命令以从现有数据库创建模型
 
-``` powershell
-Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer
-```
+  ``` powershell
+  Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer
+  ```
 
-反向工程过程基于现有数据库的架构创建实体类和派生上下文。 实体类是简单的 C# 对象，代表要查询和保存的数据。
+> [!TIP]  
+> 可以通过将 `-Tables` 参数添加到上述命令来指定要为其生成实体的表。 例如 `-Tables Blog,Post`。
 
-<!-- [!code-csharp[Main](samples/core/GetStarted/FullNet/ConsoleApp.ExistingDb/Blog.cs)] -->
-``` csharp
-using System;
-using System.Collections.Generic;
+反向工程过程基于现有数据库的架构创建实体类（`Blog` 和 `Post`）和派生上下文（`BloggingContext`）。
 
-namespace EFGetStarted.ConsoleApp.ExistingDb
-{
-    public partial class Blog
-    {
-        public Blog()
-        {
-            Post = new HashSet<Post>();
-        }
+实体类是简单的 C# 对象，代表要查询和保存的数据。 以下是 `Blog` 和 `Post` 实体类：
 
-        public int BlogId { get; set; }
-        public string Url { get; set; }
+ [!code-csharp[Main](../../../../samples/core/GetStarted/FullNet/ConsoleApp.ExistingDb/Blog.cs)]
 
-        public virtual ICollection<Post> Post { get; set; }
-    }
-}
-```
+[!code-csharp[Main](../../../../samples/core/GetStarted/FullNet/ConsoleApp.ExistingDb/Post.cs)]
 
-上下文表示与数据库的会话，并允许查询和保存实体类的实例。
+> [!TIP]  
+> 若要启用延迟加载，可以创建导航属性 `virtual`（Blog.Post 和 Post.Blog）。
 
-<!-- [!code-csharp[Main](samples/core/GetStarted/FullNet/ConsoleApp.ExistingDb/BloggingContext.cs)] -->
-``` csharp
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+上下文表示与数据库的会话。 其中有可用于查询和保存实体类实例的方法。
 
-namespace EFGetStarted.ConsoleApp.ExistingDb
-{
-    public partial class BloggingContext : DbContext
-    {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;");
-        }
+[!code-csharp[Main](../../../../samples/core/GetStarted/FullNet/ConsoleApp.ExistingDb/BloggingContext.cs)]
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Blog>(entity =>
-            {
-                entity.Property(e => e.Url).IsRequired();
-            });
+## <a name="use-the-model"></a>使用模型
 
-            modelBuilder.Entity<Post>(entity =>
-            {
-                entity.HasOne(d => d.Blog)
-                    .WithMany(p => p.Post)
-                    .HasForeignKey(d => d.BlogId);
-            });
-        }
-
-        public virtual DbSet<Blog> Blog { get; set; }
-        public virtual DbSet<Post> Post { get; set; }
-    }
-}
-```
-
-## <a name="use-your-model"></a>使用模型
-
-你现在可以使用模型执行数据访问。
+现在可以使用模型执行数据访问。
 
 * 打开 Program.cs
 
 * 将此文件的内容替换为以下代码
 
-<!-- [!code-csharp[Main](samples/core/GetStarted/FullNet/ConsoleApp.ExistingDb/Program.cs)] -->
-``` csharp
-using System;
-
-namespace EFGetStarted.ConsoleApp.ExistingDb
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            using (var db = new BloggingContext())
-            {
-                db.Blog.Add(new Blog { Url = "http://blogs.msdn.com/adonet" });
-                var count = db.SaveChanges();
-                Console.WriteLine("{0} records saved to database", count);
-
-                Console.WriteLine();
-                Console.WriteLine("All blogs in database:");
-                foreach (var blog in db.Blog)
-                {
-                    Console.WriteLine(" - {0}", blog.Url);
-                }
-            }
-        }
-    }
-}
-```
+  [!code-csharp[Main](../../../../samples/core/GetStarted/FullNet/ConsoleApp.ExistingDb/Program.cs)] 
 
 * “调试”>“开始执行(不调试)”
 
-你将看到，把一个博客保存到数据库后，所有博客的详细信息都将显示在控制台中。
+  可以看到，把一个博客保存到数据库后，所有博客的详细信息都将显示在控制台中。
 
-![图像](_static/output-existing-db.png)
+  ![图像](_static/output-existing-db.png)
+
+## <a name="next-steps"></a>后续步骤
+
+有关如何构建上下文和实体类的详细信息，请参阅以下文章：
+* [反向工程](xref:core/managing-schemas/scaffolding)
+* [Entity Framework Core 工具参考 - .NET CLI](xref:core/miscellaneous/cli/dotnet#dotnet-ef-dbcontext-scaffold)
+* [Entity Framework Core 工具参考 - 程序包管理器控制台](xref:core/miscellaneous/cli/powershell#scaffold-dbcontext)

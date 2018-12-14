@@ -1,16 +1,15 @@
 ---
-title: "EF Core 1.0 中的新增功能 - EF Core"
+title: EF Core 1.0 中的新增功能 - EF Core
 author: divega
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: 20A25111-AEBE-4BC2-83A5-3F651952DF72
-ms.technology: entity-framework-core
 uid: core/what-is-new/ef-core-1.0
-ms.openlocfilehash: e5b9e57a01ff302b1d7bd0fc5419aa5b8213865e
-ms.sourcegitcommit: 01a75cd483c1943ddd6f82af971f07abde20912e
+ms.openlocfilehash: 409e16d762bca3ecd083ea191ad7b42aa0a6a275
+ms.sourcegitcommit: dadee5905ada9ecdbae28363a682950383ce3e10
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42996845"
 ---
 # <a name="features-included-in-ef-core-10"></a>EF Core 1.0 中包含的功能
 
@@ -30,7 +29,7 @@ ms.lasthandoff: 10/27/2017
 ### <a name="fluent-api"></a>Fluent API
 允许覆盖上下文中的 `OnModelCreating` 方法，以进一步配置按约定发现的模型。
 ### <a name="data-annotations"></a>数据注释
-可以添加到实体类/属性并可影响 EF 模型的属性（即添加 [必需] 将让 EF 知道属性是必需的）。
+可添加到实体类/属性并影响 EF 模型的属性。 例如，`[Required]` 将告知 EF 某个属性是必需的。
 ### <a name="relational-table-mapping"></a>关系表映射
 允许实体映射到表/列。
 ### <a name="key-value-generation"></a>键值生成
@@ -78,7 +77,7 @@ ms.lasthandoff: 10/27/2017
 ### <a name="mixed-clientserver-evaluation"></a>混合客户端/服务器评估
 使查询能够包含无法在数据库中评估的逻辑，因此，必须在将数据检索到内存后进行评估。
 ### <a name="notracking"></a>NoTracking
-当上下文不需要监视实体实例的变化（即结果是只读的）时，可加快查询执行速度。
+如果上下文无需监视实体实例的变化，可加快查询执行速度（在结果只读的情况下非常有用）。
 ### <a name="eager-loading"></a>预先加载
 提供 `Include` 和 `ThenInclude` 方法来标识在查询时也应提取的相关数据。
 ### <a name="async-query"></a>异步查询

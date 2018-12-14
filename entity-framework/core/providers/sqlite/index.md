@@ -1,20 +1,19 @@
 ---
-title: "SQLite 数据库提供程序 - EF Core"
+title: SQLite 数据库提供程序 - EF Core
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: 3e2f7698-fec2-4cec-9e2d-2e3e0074120c
-ms.technology: entity-framework-core
 uid: core/providers/sqlite/index
-ms.openlocfilehash: 0f3905a491fb5f7a657ce9037d166771e1f326d8
-ms.sourcegitcommit: 5e2d97e731f975cf3405ff3deab2a3c75ad1b969
+ms.openlocfilehash: 31de8449a12a10d4f98ebb4bb6125389606e9bbd
+ms.sourcegitcommit: dadee5905ada9ecdbae28363a682950383ce3e10
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42993997"
 ---
 # <a name="sqlite-ef-core-database-provider"></a>SQLite EF Core 数据库提供程序
 
-此数据库提供程序允许将 Entity Framework Core 与 SQLite 一起使用。 此提供程序作为 [EntityFramework GitHub 项目](https://github.com/aspnet/EntityFramework)的组成部分进行维护。
+此数据库提供程序允许将 Entity Framework Core 与 SQLite 一起使用。 该提供程序作为 [Entity Framework Core 项目](https://github.com/aspnet/EntityFrameworkCore)的组成部分进行维护。
 
 ## <a name="install"></a>安装
 
@@ -43,7 +42,7 @@ Install-Package Microsoft.EntityFrameworkCore.Sqlite
 
 * .NET Framework（4.5.1 及以上版本）
 
-* .NET 核心
+* .NET Core
 
 * Mono（4.2.0 及以上版本）
 

@@ -1,18 +1,17 @@
 ---
-title: "使用 Entity Framework 测试组件 - EF Core"
+title: 使用 Entity Framework 测试组件 - EF Core
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: 1603be0c-69bc-4dd9-9a08-3d0129cdc6c1
-ms.technology: entity-framework-core
 uid: core/miscellaneous/testing/index
-ms.openlocfilehash: c82c25da393c39cf5e2deb46c7322e7395051937
-ms.sourcegitcommit: 01a75cd483c1943ddd6f82af971f07abde20912e
+ms.openlocfilehash: fc751b9053c337e4911f4016b65b370d1276046b
+ms.sourcegitcommit: dadee5905ada9ecdbae28363a682950383ce3e10
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42997832"
 ---
-# <a name="testing"></a>测试
+# <a name="testing"></a>正在测试
 
 你可能希望使用类似于连接真实数据库的方式来测试组件，但不产生实际数据库 I/O 操作的开销。
 

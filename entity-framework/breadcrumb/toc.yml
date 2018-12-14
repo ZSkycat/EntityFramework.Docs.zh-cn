@@ -1,45 +1,77 @@
+items:
 - name: Docs
   tocHref: /
   topicHref: /
   items:
-    - name: Entity Framework
-      tocHref: /ef/
-      topicHref: /ef/index
+  - name: Entity Framework
+    tocHref: /ef/
+    topicHref: /ef/index
+    items:
+    - name: 比较 EF Core 和 EF6
+      tocHref: /ef/efcore-and-ef6/
+      topicHref: /ef/efcore-and-ef6/index
+    - name: Entity Framework Core
+      tocHref: /ef/core/
+      topicHref: /ef/core/index
       items:
-        - name: 比较 EF Core 和 EF6
-          tocHref: /ef/efcore-and-ef6/
-          topicHref: /ef/efcore-and-ef6/index
-        - name: Entity Framework Core
-          tocHref: /ef/core/
-          topicHref: /ef/core/index
-          items:
-            - name: 新增功能
-              tocHref: /ef/core/what-is-new/
-              topicHref: /ef/core/what-is-new/index
-            - name: 入门
-              tocHref: /ef/core/get-started/
-              topicHref: /ef/core/get-started/index
-            - name: 创建模型
-              tocHref: /ef/core/modeling/
-              topicHref: /ef/core/modeling/index
-            - name: 查询数据
-              tocHref: /ef/core/querying/
-              topicHref: /ef/core/querying/index
-            - name: 保存数据
-              tocHref: /ef/core/saving/
-              topicHref: /ef/core/saving/index
-            - name: 数据库提供程序
-              tocHref: /ef/core/providers/
-              topicHref: /ef/core/providers/index
-            - name: 命令行参考
-              tocHref: /ef/core/miscellaneous/cli/
-              topicHref: /ef/core/miscellaneous/cli/index
-            - name: 工具和扩展
-              tocHref: /ef/core/extensions/
-              topicHref: /ef/core/extensions/index
-            - name: 杂项
-              tocHref: /ef/core/miscellaneous/
-              topicHref: /ef/core/miscellaneous/index
-        - name: Entity Framework 6
-          tocHref: /ef/ef6/
-          topicHref: /ef/ef6/index
+      - name: 新增功能
+        tocHref: /ef/core/what-is-new/
+        topicHref: /ef/core/what-is-new/index
+      - name: 开始操作
+        tocHref: /ef/core/get-started/
+        topicHref: /ef/core/get-started/index
+      - name: 创建模型
+        tocHref: /ef/core/modeling/
+        topicHref: /ef/core/modeling/index
+      - name: 查询数据
+        tocHref: /ef/core/querying/
+        topicHref: /ef/core/querying/index
+      - name: 保存数据
+        tocHref: /ef/core/saving/
+        topicHref: /ef/core/saving/index
+      - name: 支持的 .NET 实现
+        tocHref: /ef/core/platforms/
+        topicHref: /ef/core/platofms/index
+      - name: 数据库提供程序
+        tocHref: /ef/core/providers/
+        topicHref: /ef/core/providers/index
+      - name: 管理数据库架构
+        tocHref: /ef/core/managing-schemas/
+        topicHref: /ef/core/managing-schemas/index
+      - name: 命令行参考
+        tocHref: /ef/core/miscellaneous/cli/
+        topicHref: /ef/core/miscellaneous/cli/index
+      - name: 工具和扩展
+        tocHref: /ef/core/extensions/
+        topicHref: /ef/core/extensions/index
+    - name: Entity Framework 6
+      tocHref: /ef/ef6/
+      topicHref: /ef/ef6/index
+      items:
+      - name: 新增功能
+        tocHref: /ef/ef6/what-is-new/
+        topicHref: /ef/ef6/what-is-new/index
+      - name: 开始操作
+        tocHref: /ef/ef6/get-started
+        topicHref: /ef/ef6/get-started
+      - name: 基础知识
+        tocHref: /ef/ef6/fundamentals/
+        topicHref: /ef/ef6/fundamentals/index
+      - name: 创建模型
+        tocHref: /ef/ef6/modeling/
+        topicHref: /ef/ef6/modeling/index
+      - name: 查询数据
+        tocHref: /ef/ef6/querying/
+        topicHref: /ef/ef6/querying/index
+      - name: 保存数据
+        tocHref: /ef/ef6/saving/
+        topicHref: /ef/ef6/saving/index
+      - name: 其他资源
+        tocHref: /ef/ef6/resources/
+        topicHref: /ef/ef6/resources/index
+ms.openlocfilehash: f89ba463cbd7fff0ffaefe3ef325e382618d5400
+ms.sourcegitcommit: 2b787009fd5be5627f1189ee396e708cd130e07b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45490763"

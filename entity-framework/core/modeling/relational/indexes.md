@@ -1,53 +1,41 @@
 ---
-title: "索引的 EF 核心"
+title: 索引的 EF Core
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: 4581e7ba-5e7f-452c-9937-0aaf790ba10a
-ms.technology: entity-framework-core
 uid: core/modeling/relational/indexes
-ms.openlocfilehash: 683b580bb155e0416f13c5d63e3280078fbcee21
-ms.sourcegitcommit: 01a75cd483c1943ddd6f82af971f07abde20912e
+ms.openlocfilehash: 605b30ce710d9034deab97f695496ec66a576565
+ms.sourcegitcommit: dadee5905ada9ecdbae28363a682950383ce3e10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42993212"
 ---
 # <a name="indexes"></a>索引
 
 > [!NOTE]  
-> 一般情况下，此部分中的配置是适用于关系数据库。 此处所示的扩展方法将变为可用时安装关系数据库提供程序 (由于共享*Microsoft.EntityFrameworkCore.Relational*包)。
+> 一般而言，本部分中的配置适用于关系数据库。 安装关系数据库提供程序时，此处显示的扩展方法将变为可用（原因在于共享的 Microsoft.EntityFrameworkCore.Relational 包）。
 
-关系数据库中的索引映射到索引中的实体框架的核心概念相同。
+关系数据库中的索引映射到相同的概念的 Entity Framework core 中的索引。
 
 ## <a name="conventions"></a>约定
 
-按照约定，名为索引`IX_<type name>_<property name>`。 对于组合索引`<property name>`将成为下划线分隔列表的属性名称。
+按照约定，索引名为`IX_<type name>_<property name>`。 对于复合索引`<property name>`变得下划线分隔属性名称的列表。
 
 ## <a name="data-annotations"></a>数据注释
 
-不能使用数据注释配置索引。
+索引不使用数据批注配置。
 
 ## <a name="fluent-api"></a>Fluent API
 
-Fluent API 可用于配置索引的名称。
+可以使用 Fluent API 来配置索引的名称。
 
-<!-- [!code-csharp[Main](samples/core/relational/Modeling/FluentAPI/Samples/Relational/IndexName.cs?highlight=9)] -->
-``` csharp
-class MyContext : DbContext
-{
-    public DbSet<Blog> Blogs { get; set; }
+[!code-csharp[Main](../../../../samples/core/Modeling/FluentAPI/Samples/Relational/IndexName.cs?name=Model&highlight=9)]
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Blog>()
-            .HasIndex(b => b.Url)
-            .HasName("Index_Url");
-    }
-}
+此外可以指定筛选器。
 
-public class Blog
-{
-    public int BlogId { get; set; }
-    public string Url { get; set; }
-}
-```
+[!code-csharp[Main](../../../../samples/core/Modeling/FluentAPI/Samples/Relational/IndexFilter.cs?name=Model&highlight=9)]
+
+当使用 EF 的 SQL Server 提供程序将添加 IS NOT NULL' 筛选所有唯一索引的一部分的可以为 null 列。 若要重写可以提供此约定`null`值。
+
+[!code-csharp[Main](../../../../samples/core/Modeling/FluentAPI/Samples/Relational/IndexNoFilter.cs?name=Model&highlight=10)]

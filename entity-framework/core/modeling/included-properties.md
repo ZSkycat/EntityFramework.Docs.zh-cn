@@ -1,28 +1,27 @@
 ---
-title: "包括和排除属性-EF 核心"
+title: 包括和排除属性 - EF Core
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: e9dff604-3469-4a05-8f9e-18ac281d82a9
-ms.technology: entity-framework-core
 uid: core/modeling/included-properties
-ms.openlocfilehash: a6eaea4319f6a4d30c223265bf75a88731a38443
-ms.sourcegitcommit: 01a75cd483c1943ddd6f82af971f07abde20912e
+ms.openlocfilehash: 07b70e4517b67490e04a9ec9fa22b9b5d5217681
+ms.sourcegitcommit: dadee5905ada9ecdbae28363a682950383ce3e10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42998250"
 ---
 # <a name="including--excluding-properties"></a>包括和排除属性
 
-在模型中的属性包括意味着 EF 具有该属性有关的元数据，并且将尝试读取和写入从/到数据库的值。
+模型中包含属性意味着 EF 拥有该属性的元数据，并将尝试从数据库读取值或者向数据库写入值。
 
 ## <a name="conventions"></a>约定
 
-按照约定，将在模型中包括具有 getter 和 setter 的公共属性。
+按照约定，模型所含的那些公共属性都拥有一个 getter 和一个 setter。
 
 ## <a name="data-annotations"></a>数据注释
 
-可以使用数据注释从模型中排除属性。
+您可以使用数据注释方式来从模型中排除某个属性。
 
 <!-- [!code-csharp[Main](samples/core/Modeling/DataAnnotations/Samples/IgnoreProperty.cs?highlight=6)] -->
 ``` csharp
@@ -38,7 +37,7 @@ public class Blog
 
 ## <a name="fluent-api"></a>Fluent API
 
-可以使用 Fluent API 若要从模型中排除属性。
+您也可以用Fluent API 从模型中排除某个属性。
 
 <!-- [!code-csharp[Main](samples/core/Modeling/FluentAPI/Samples/IgnoreProperty.cs?highlight=7,8)] -->
 ``` csharp

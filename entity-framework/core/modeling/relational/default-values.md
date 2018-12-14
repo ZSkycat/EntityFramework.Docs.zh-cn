@@ -1,23 +1,22 @@
 ---
-title: "默认值的 EF 核心"
+title: 默认值的 EF Core
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: e541366a-130f-47dd-9997-1b110a11febe
-ms.technology: entity-framework-core
 uid: core/modeling/relational/default-values
-ms.openlocfilehash: 73b916b6d9f9c984c8ea010f2319eafa7d031a58
-ms.sourcegitcommit: 01a75cd483c1943ddd6f82af971f07abde20912e
+ms.openlocfilehash: 341f243ddddc345bb4236e5c34f814694b71e32a
+ms.sourcegitcommit: dadee5905ada9ecdbae28363a682950383ce3e10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42996247"
 ---
 # <a name="default-values"></a>默认值
 
 > [!NOTE]  
-> 一般情况下，此部分中的配置是适用于关系数据库。 此处所示的扩展方法将变为可用时安装关系数据库提供程序 (由于共享*Microsoft.EntityFrameworkCore.Relational*包)。
+> 一般而言，本部分中的配置适用于关系数据库。 安装关系数据库提供程序时，此处显示的扩展方法将变为可用（原因在于共享的 Microsoft.EntityFrameworkCore.Relational 包）。
 
-列的默认值是如果插入新行，但未指定值的列将插入的值。
+如果插入新行，但未指定值的列将插入值的列的默认值。
 
 ## <a name="conventions"></a>约定
 
@@ -29,7 +28,7 @@ ms.lasthandoff: 10/27/2017
 
 ## <a name="fluent-api"></a>Fluent API
 
-可以使用 Fluent API 指定属性的默认值。
+Fluent API 可用于指定属性的默认值。
 
 <!-- [!code-csharp[Main](samples/core/relational/Modeling/FluentAPI/Samples/Relational/DefaultValue.cs?highlight=9)] -->
 ``` csharp
@@ -53,7 +52,7 @@ public class Blog
 }
 ```
 
-你还可以指定用于计算默认值的 SQL 片段。
+此外可以指定用于计算的默认值的 SQL 片段。
 
 <!-- [!code-csharp[Main](samples/core/relational/Modeling/FluentAPI/Samples/Relational/DefaultValueSql.cs?highlight=9)] -->
 ``` csharp

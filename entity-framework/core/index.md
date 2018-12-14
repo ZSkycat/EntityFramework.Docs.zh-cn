@@ -1,46 +1,23 @@
 ---
-title: "简要概述 - EF Core"
+title: 概述 - EF Core
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: bc2a2676-bc46-493f-bf49-e3cc97994d57
-ms.technology: entity-framework-core
 uid: core/index
-ms.openlocfilehash: 13de9cf98111b8e253e073c591fcec04206b4c4f
-ms.sourcegitcommit: 5e2d97e731f975cf3405ff3deab2a3c75ad1b969
+ms.openlocfilehash: ee3fac9e9103749195886a632fbeac3163a46689
+ms.sourcegitcommit: 0d36e8ff0892b7f034b765b15e041f375f88579a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 09/09/2018
+ms.locfileid: "44250531"
 ---
-# <a name="entity-framework-core-quick-overview"></a>Entity Framework Core 简要概述
+# <a name="entity-framework-core"></a>Entity Framework Core
 
 Entity Framework (EF) Core 是轻量化、可扩展和跨平台版的常用 Entity Framework 数据访问技术。
 
-EF Core 是一种支持 .NET 开发人员使用 .NET 对象处理数据库的对象关系映射程序 (O/RM)。 它不要求提供开发人员通常需要编写的大部分数据访问代码。 EF Core 支持多个数据库引擎，请参阅[数据库提供程序](providers/index.md)了解详细信息。
+EF Core 可用作对象关系映射程序 (O/RM)，以便于 .NET 开发人员能够使用 .NET 对象来处理数据库，这样就不必经常编写大部分数据访问代码了。
 
-如果希望通过编写代码进行了解，建议你阅读其中一篇[入门](get-started/index.md)指南以开始使用 EF Core。
-
-## <a name="latest-version-ef-core-20"></a>最新版本：EF Core 2.0
-
-如果已熟悉 EF Core 并希望直接了解新版本的详细信息，请参阅：
-
-- **[EF Core 2.0 中的新增功能](what-is-new/index.md)**
-- **[将现有应用程序升级至 EF Core 2.0](miscellaneous/1x-2x-upgrade.md)**
-
-## <a name="get-entity-framework-core"></a>获取 Entity Framework Core
-
-针对要使用的数据库提供程序，[安装 NuGet 包](https://docs.nuget.org/ndocs/quickstart/use-a-package)。 例如 要在跨平台开发中安装 SQL Server 提供程序，请在命令行中使用 `dotnet` 工具：
-
-``` Console
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-```
-
-或者在 Visual Studio 中，使用包管理器控制台：
-
-``` PowerShell
-Install-Package Microsoft.EntityFrameworkCore.SqlServer
-```
-有关可用提供程序的信息，请参阅[数据库提供程序](providers/index.md)；有关更多详细的安装步骤，请参阅[安装 EF Core](get-started/install/index.md)。
+EF Core 支持多个数据库引擎，请参阅[数据库提供程序](providers/index.md)了解详细信息。
 
 ## <a name="the-model"></a>模型
 
@@ -111,3 +88,8 @@ using (var db = new BloggingContext())
     db.SaveChanges();
 }
 ```
+
+## <a name="next-steps"></a>后续步骤
+
+有关介绍性教程，请参阅 [Entity Framework Core 入门](get-started/index.md)。
+

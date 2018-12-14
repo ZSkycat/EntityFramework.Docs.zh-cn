@@ -1,20 +1,19 @@
 ---
-title: "Microsoft SQL Server 数据库提供程序 - EF Core"
+title: Microsoft SQL Server 数据库提供程序 - EF Core
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: 2e007c82-c6e4-45bb-8129-851b79ec1a0a
-ms.technology: entity-framework-core
 uid: core/providers/sql-server/index
-ms.openlocfilehash: b2faf932e0484da4df0c1774afa7ba7ae2d077a5
-ms.sourcegitcommit: 5e2d97e731f975cf3405ff3deab2a3c75ad1b969
+ms.openlocfilehash: a524794a61a9f5078998aea04b45c31c19357f2b
+ms.sourcegitcommit: dadee5905ada9ecdbae28363a682950383ce3e10
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42995664"
 ---
 # <a name="microsoft-sql-server-ef-core-database-provider"></a>Microsoft SQL Server EF Core 数据库提供程序
 
-此数据库提供程序允许将 Entity Framework Core 与 Microsoft SQL Server（包括 SQL Azure）一起使用。 此提供程序作为 [EntityFramework GitHub 项目](https://github.com/aspnet/EntityFramework)的组成部分进行维护。
+此数据库提供程序允许将 Entity Framework Core 与 Microsoft SQL Server（包括 SQL Azure）一起使用。 该提供程序作为 [Entity Framework Core 项目](https://github.com/aspnet/EntityFrameworkCore)的组成部分进行维护。
 
 ## <a name="install"></a>安装
 
@@ -41,7 +40,7 @@ Install-Package Microsoft.EntityFrameworkCore.SqlServer
 
 * .NET Framework（4.5.1 及以上版本）
 
-* .NET 核心
+* .NET Core
 
 * Mono（4.2.0 及以上版本）
 

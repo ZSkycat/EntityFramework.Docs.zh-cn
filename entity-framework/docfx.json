@@ -62,21 +62,34 @@
         ]
       }
     ],
-    "globalMetadata":
-    {
+    "globalMetadata": {
       "breadcrumb_path": "/ef/breadcrumb/toc.json",
-      "searchScope": ["Entity Framework"],
+      "searchScope": [
+        "Entity Framework"
+      ],
       "manager": "divega",
-      "ms.topic": "article",
+      "ms.topic": "conceptual",
       "audience": "developer",
       "ms.reviewer": "divega",
       "ms.prod": "entity-framework",
       "ms.tgt_pltfrm": "dotnet",
-      "ms.devlang": "dotnet"
+      "ms.devlang": "dotnet",
+      "ms.author": "divega"
+    },
+    "fileMetadata": {
+      "feedback_product_url": {
+        "ef6/**/**.md": "https://github.com/aspnet/EntityFramework6/issues/new"
+      },
+      "ms.technology": {
+        "core/**/**.md": "entity-framework-core",
+        "ef6/**/**.md": "entity-framework-6",
+        "efcore-and-ef6/**/**.md": "entity-framework-core"
+      }      
     },
     "dest": "_site",
     "template": [
       "default"
-    ]
+    ],
+    "markdownEngineName": "markdig"
   }
 }

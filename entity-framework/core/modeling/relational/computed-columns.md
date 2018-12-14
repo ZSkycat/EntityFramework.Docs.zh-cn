@@ -1,21 +1,20 @@
 ---
-title: "计算的列的 EF 核心"
+title: 计算的列的 EF Core
 author: rowanmiller
-ms.author: divega
 ms.date: 10/27/2016
 ms.assetid: e9d81f06-805d-45c9-97c2-3546df654829
-ms.technology: entity-framework-core
 uid: core/modeling/relational/computed-columns
-ms.openlocfilehash: 95312504286bd34cc666b5a21273835c4b35d379
-ms.sourcegitcommit: 01a75cd483c1943ddd6f82af971f07abde20912e
+ms.openlocfilehash: b88efdf69e5100e4eff55f3a41925d2d8e7c3178
+ms.sourcegitcommit: dadee5905ada9ecdbae28363a682950383ce3e10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42993948"
 ---
-# <a name="computed-columns"></a>计算列
+# <a name="computed-columns"></a>计算的列
 
 > [!NOTE]  
-> 一般情况下，此部分中的配置是适用于关系数据库。 此处所示的扩展方法将变为可用时安装关系数据库提供程序 (由于共享*Microsoft.EntityFrameworkCore.Relational*包)。
+> 一般而言，本部分中的配置适用于关系数据库。 安装关系数据库提供程序时，此处显示的扩展方法将变为可用（原因在于共享的 Microsoft.EntityFrameworkCore.Relational 包）。
 
 计算的列是在数据库中计算其值的列。 计算的列可以使用表中其他列，若要计算其值。
 
@@ -25,11 +24,11 @@ ms.lasthandoff: 10/27/2017
 
 ## <a name="data-annotations"></a>数据注释
 
-计算的列不可以使用数据注释配置。
+计算的列不能配置的数据注释。
 
 ## <a name="fluent-api"></a>Fluent API
 
-可以使用 Fluent API 指定属性应映射到计算列。
+Fluent API 可用于指定属性应映射到计算列。
 
 <!-- [!code-csharp[Main](samples/core/relational/Modeling/FluentAPI/Samples/Relational/ComputedColumn.cs?highlight=9)] -->
 ``` csharp
